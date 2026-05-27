@@ -22,6 +22,7 @@ export const MEMBROS = {
   "RvRqrodB5jNCVAb0tXmz7bnMVGX2":   { nome: "Arthur", emoji: "🎮", cor: "#8B5CF6" },
   "UgOSSA0XTMeGwTXCEp5I435tDKs2":      { nome: "Mãe", emoji: "🌸", cor: "#EF4444" },
   "ei8TgmYUCscci4M1qqWSFvd5D633":      { nome: "Pai", emoji: "🔧", cor: "#3B82F6" },
+  "CF4DSQhWkafWDhWpbxhDft25twn1":     { nome: "Desenvolvedor", emoji: "👨‍💻", cor: "#10B981" }
 };
 
 // ── Estado global ─────────────────────────────────────────
