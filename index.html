@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F59E0B" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Pedacinho do Céu" />
+  <title>Pedacinho do Céu 🌿</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== TELA DE LOGIN ===== -->
+  <div id="tela-login" class="tela-auth escondido">
+    <div class="auth-card">
+      <div class="logo-area">
+        <span class="logo-icone">🌿</span>
+        <h1 class="logo-titulo">Pedacinho do Céu</h1>
+        <p class="logo-subtitulo">Bem-vindo à nossa casa</p>
+      </div>
+      <div class="form-grupo">
+        <label for="login-email">E-mail</label>
+        <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email" />
+      </div>
+      <div class="form-grupo">
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <button class="btn-primario" id="btn-login">Entrar</button>
+      <p id="login-erro" class="msg-erro escondido"></p>
+    </div>
+  </div>
+
+  <!-- ===== APP PRINCIPAL ===== -->
+  <div id="app" class="escondido">
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <div class="cabecalho-esq">
+        <span class="logo-icone-sm">🌿</span>
+        <span class="cabecalho-titulo" id="titulo-pagina">Início</span>
+      </div>
+      <div class="cabecalho-dir">
+        <span class="avatar-usuario" id="avatar-usuario">?</span>
+        <button class="btn-icone" id="btn-logout" title="Sair" aria-label="Sair">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Conteúdo das páginas -->
+    <main class="conteudo" id="conteudo-principal">
+      <!-- Injetado dinamicamente pelo roteador -->
+    </main>
+
+    <!-- Navegação inferior -->
+    <nav class="nav-bottom" role="navigation" aria-label="Menu principal">
+      <button class="nav-item ativo" data-pagina="inicio" aria-label="Início">
+        <svg class="nav-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Início</span>
+      </button>
+      <button class="nav-item" data-pagina="tarefas" aria-label="Tarefas">
+        <svg class="nav-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span>Tarefas</span>
+      </button>
+      <button class="nav-item" data-pagina="mercado" aria-label="Mercado">
+        <svg class="nav-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span>Mercado</span>
+      </button>
+      <button class="nav-item" data-pagina="mais" aria-label="Mais módulos">
+        <svg class="nav-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+        </svg>
+        <span>Mais</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- ===== TOAST / NOTIFICAÇÃO ===== -->
+  <div id="toast" class="toast escondido" role="alert" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

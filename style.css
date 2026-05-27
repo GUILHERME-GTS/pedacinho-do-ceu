@@ -1,0 +1,576 @@
+/* ============================================================
+   style.css — Pedacinho do Céu
+   Design: moderno, aconchegante, cores quentes + clean
+   ============================================================ */
+
+/* ── Fontes ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap');
+
+/* ── Variáveis ───────────────────────────────────────────── */
+:root {
+  /* Paleta principal */
+  --amarelo:        #F59E0B;
+  --amarelo-claro:  #FEF3C7;
+  --amarelo-escuro: #D97706;
+  --verde:          #10B981;
+  --verde-claro:    #D1FAE5;
+  --verde-escuro:   #059669;
+  --laranja:        #F97316;
+  --laranja-claro:  #FFEDD5;
+  --roxo:           #8B5CF6;
+  --roxo-claro:     #EDE9FE;
+  --azul:           #3B82F6;
+  --azul-claro:     #DBEAFE;
+  --coral:          #EF4444;
+  --coral-claro:    #FEE2E2;
+
+  /* Neutros */
+  --branco:         #FFFFFF;
+  --fundo:          #FAFAF8;
+  --fundo-card:     #FFFFFF;
+  --borda:          #E5E7EB;
+  --borda-suave:    #F3F4F6;
+  --texto-primario: #1F2937;
+  --texto-sec:      #6B7280;
+  --texto-terciario:#9CA3AF;
+
+  /* Sombras */
+  --sombra-sm:  0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --sombra-md:  0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  --sombra-lg:  0 10px 15px rgba(0,0,0,.08), 0 4px 6px rgba(0,0,0,.05);
+
+  /* Layout */
+  --raio:       12px;
+  --raio-sm:    8px;
+  --raio-pill:  100px;
+  --nav-height: 72px;
+  --header-height: 60px;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: var(--texto-primario);
+  background: var(--fundo);
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+img { max-width: 100%; }
+
+/* ── Utilitários ─────────────────────────────────────────── */
+.escondido { display: none !important; }
+
+/* ── Tela de Login ───────────────────────────────────────── */
+.tela-auth {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: linear-gradient(160deg, #FEF3C7 0%, #FAFAF8 50%, #D1FAE5 100%);
+}
+.auth-card {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: var(--sombra-lg);
+}
+.logo-area {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.logo-icone {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 8px;
+}
+.logo-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--texto-primario);
+}
+.logo-subtitulo {
+  color: var(--texto-sec);
+  margin-top: 4px;
+  font-size: 14px;
+}
+.form-grupo {
+  margin-bottom: 16px;
+}
+.form-grupo label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--texto-sec);
+  margin-bottom: 6px;
+}
+.form-grupo input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio-sm);
+  background: var(--fundo);
+  color: var(--texto-primario);
+  transition: border-color .2s;
+  outline: none;
+}
+.form-grupo input:focus {
+  border-color: var(--amarelo);
+  background: var(--branco);
+}
+.msg-erro {
+  color: var(--coral);
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ── Botões ─────────────────────────────────────────────── */
+.btn-primario {
+  width: 100%;
+  padding: 14px;
+  background: var(--amarelo);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background .2s, transform .1s;
+}
+.btn-primario:hover  { background: var(--amarelo-escuro); }
+.btn-primario:active { transform: scale(.98); }
+
+.btn-icone {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--texto-sec);
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+}
+.btn-icone:hover { background: var(--borda-suave); }
+
+.btn-fab {
+  position: fixed;
+  bottom: calc(var(--nav-height) + 16px);
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--amarelo);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: var(--sombra-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: transform .15s, background .2s;
+}
+.btn-fab:hover  { background: var(--amarelo-escuro); }
+.btn-fab:active { transform: scale(.93); }
+
+.btn-outline {
+  padding: 10px 18px;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio-pill);
+  background: none;
+  color: var(--texto-sec);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.btn-outline:hover {
+  border-color: var(--amarelo);
+  color: var(--amarelo-escuro);
+}
+
+/* ── Cabeçalho ───────────────────────────────────────────── */
+.cabecalho {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda-suave);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 50;
+}
+.cabecalho-esq {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icone-sm { font-size: 22px; }
+.cabecalho-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.cabecalho-dir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.avatar-usuario {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amarelo-claro);
+  color: var(--amarelo-escuro);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* ── Conteúdo Principal ──────────────────────────────────── */
+.conteudo {
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--nav-height) + 8px);
+  min-height: 100dvh;
+}
+.pagina {
+  padding: 20px 16px;
+}
+
+/* ── Navegação inferior ──────────────────────────────────── */
+.nav-bottom {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: var(--branco);
+  border-top: 1px solid var(--borda-suave);
+  display: flex;
+  align-items: stretch;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 50;
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--texto-terciario);
+  font-size: 11px;
+  font-weight: 600;
+  transition: color .15s;
+  padding: 8px 4px;
+}
+.nav-item.ativo {
+  color: var(--amarelo-escuro);
+}
+.nav-icone {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+.nav-item.ativo .nav-icone {
+  stroke-width: 2.5;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+  background: var(--fundo-card);
+  border-radius: var(--raio);
+  padding: 16px;
+  box-shadow: var(--sombra-sm);
+  border: 1px solid var(--borda-suave);
+  margin-bottom: 12px;
+}
+.card-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.card-desc {
+  color: var(--texto-sec);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── Seções ──────────────────────────────────────────────── */
+.secao-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--texto-primario);
+}
+.secao-subtitulo {
+  font-size: 13px;
+  color: var(--texto-sec);
+  margin-bottom: 16px;
+}
+
+/* ── Chips / Tags ────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--raio-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+.chip-amarelo  { background: var(--amarelo-claro);  color: var(--amarelo-escuro); }
+.chip-verde    { background: var(--verde-claro);    color: var(--verde-escuro); }
+.chip-coral    { background: var(--coral-claro);    color: #DC2626; }
+.chip-roxo     { background: var(--roxo-claro);     color: #7C3AED; }
+.chip-azul     { background: var(--azul-claro);     color: #2563EB; }
+.chip-laranja  { background: var(--laranja-claro);  color: #EA580C; }
+
+/* ── Lista de itens (mercado, tarefas) ───────────────────── */
+.lista-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--fundo-card);
+  border-radius: var(--raio-sm);
+  border: 1px solid var(--borda-suave);
+  margin-bottom: 8px;
+  transition: background .15s;
+}
+.lista-item:hover { background: var(--fundo); }
+.lista-item.concluido {
+  opacity: .55;
+}
+.lista-item.concluido .item-titulo {
+  text-decoration: line-through;
+}
+
+.checkbox-custom {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--borda);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, border-color .15s;
+}
+.checkbox-custom.marcado {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #fff;
+}
+
+.item-titulo {
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+}
+.item-sub {
+  font-size: 13px;
+  color: var(--texto-sec);
+}
+
+/* ── Grid de módulos (página "Mais") ─────────────────────── */
+.grid-modulos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.modulo-card {
+  background: var(--fundo-card);
+  border-radius: var(--raio);
+  padding: 20px 16px;
+  border: 1px solid var(--borda-suave);
+  box-shadow: var(--sombra-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: transform .15s, box-shadow .15s;
+}
+.modulo-card:hover  { transform: translateY(-2px); box-shadow: var(--sombra-md); }
+.modulo-card:active { transform: scale(.97); }
+.modulo-icone {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 8px;
+}
+.modulo-nome {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ── Modal / Drawer ──────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+}
+.drawer {
+  background: var(--branco);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px;
+  width: 100%;
+  max-height: 90dvh;
+  overflow-y: auto;
+  animation: slideUp .25s ease-out;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.drawer-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--borda);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+.drawer-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* ── Campos de formulário ────────────────────────────────── */
+.campo {
+  margin-bottom: 16px;
+}
+.campo label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--texto-sec);
+  margin-bottom: 6px;
+}
+.campo input,
+.campo textarea,
+.campo select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio-sm);
+  background: var(--fundo);
+  color: var(--texto-primario);
+  outline: none;
+  transition: border-color .2s;
+  resize: vertical;
+}
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: var(--amarelo);
+  background: var(--branco);
+}
+
+/* ── Toast ───────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: calc(var(--nav-height) + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--texto-primario);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--raio-pill);
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 300;
+  white-space: nowrap;
+  box-shadow: var(--sombra-lg);
+  animation: fadeInUp .2s ease-out;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Estados de carregamento ─────────────────────────────── */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--borda);
+  border-top-color: var(--amarelo);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.estado-vazio {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--texto-terciario);
+}
+.estado-vazio .vazio-icone {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+.estado-vazio p {
+  font-size: 15px;
+}
+
+/* ── Membro badge ────────────────────────────────────────── */
+.membro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--raio-pill);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--amarelo-claro);
+  color: var(--amarelo-escuro);
+}
+
+/* ── Responsivo ──────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .pagina { padding: 24px 20px; }
+}
+@media (min-width: 640px) {
+  .grid-modulos { grid-template-columns: repeat(3, 1fr); }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo:         #111827;
+    --fundo-card:    #1F2937;
+    --borda:         #374151;
+    --borda-suave:   #374151;
+    --texto-primario:#F9FAFB;
+    --texto-sec:     #9CA3AF;
+    --texto-terciario:#6B7280;
+    --branco:        #1F2937;
+  }
+}
