@@ -22,7 +22,8 @@ export const MEMBROS = {
   "RvRqrodB5jNCVAb0tXmz7bnMVGX2":   { nome: "Arthur", emoji: "🎮", cor: "#8B5CF6" },
   "UgOSSA0XTMeGwTXCEp5I435tDKs2":      { nome: "Sara", emoji: "🌸", cor: "#EF4444" },
   "ei8TgmYUCscci4M1qqWSFvd5D633":      { nome: "Samuel", emoji: "🔧", cor: "#3B82F6" },
-  "CF4DSQhWkafWDhWpbxhDft25twn1":     { nome: "Dev", emoji: "👨‍💻", cor: "#10B981" }
+  "CF4DSQhWkafWDhWpbxhDft25twn1":     { nome: "Dev", emoji: "👨‍💻", cor: "#10B981" },
+  "F8x6Y7K9pcQApWrBrUmeOfCydl52":     { nome: "Rachel", emoji: "🦋", cor: "#EC4899" },
 };
 
 // ── Estado global ─────────────────────────────────────────
