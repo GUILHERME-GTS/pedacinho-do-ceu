@@ -5,7 +5,7 @@ import { getAuth }       from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore }  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY_AQUI", // Confira se este valor está correto
+  apiKey: "AIzaSyCNggExOZwetvJpBA5cWTIXpuD-n03KP4k",
   authDomain: "pedacinho-do-ceu-e8dbf.firebaseapp.com",
   projectId: "pedacinho-do-ceu-e8dbf",
   storageBucket: "pedacinho-do-ceu-e8dbf.firebasestorage.app",
