@@ -129,7 +129,12 @@ async function excluirTarefa(id) {
 
 function abrirDrawerNovaTarefa() {
   const membrosOpts = Object.entries(MEMBROS)
-    .map(([uid, m]) => `<option value="${uid}">${m.emoji} ${m.nome}</option>`)
+    .map(([uid, m]) => {
+      // Lógica inteligente: se o UID do membro for igual ao de quem está logado, 
+      // mostramos "Você", senão mostramos o nome real dele
+      const nomeExibido = (uid === usuarioAtual?.uid) ? "Você" : m.nome;
+      return `<option value="${uid}">${m.emoji} ${nomeExibido}</option>`;
+    })
     .join('');
 
   const overlay = document.createElement('div');
