@@ -18,12 +18,9 @@ import { renderMais }     from './pages/mais.js';
 // ── Membros da família ────────────────────────────────────
 // Adicione aqui os e-mails de cada membro após criar as contas no Firebase Auth
 export const MEMBROS = {
-  "Gx3LWCTFVPRAlW74QBX3y2O4SkE2": { nome: "Guilherme", emoji: "🌿", cor: "#F59E0B" },
-  "RvRqrodB5jNCVAb0tXmz7bnMVGX2":   { nome: "Arthur", emoji: "🎮", cor: "#8B5CF6" },
-  "UgOSSA0XTMeGwTXCEp5I435tDKs2":      { nome: "Sara", emoji: "🌸", cor: "#EF4444" },
-  "ei8TgmYUCscci4M1qqWSFvd5D633":      { nome: "Samuel", emoji: "🔧", cor: "#3B82F6" },
+  "7LxNziHQV6f0aCx48Xqb81tSRYV2": { nome: "Guilherme", emoji: "🌿", cor: "#F59E0B" },
+  "DrMIMzQQg4RLzidtyZG4iM5rfTj1":      { nome: "Quéren", emoji: "🌸", cor: "#EF4444" },
   "CF4DSQhWkafWDhWpbxhDft25twn1":     { nome: "Dev", emoji: "👨‍💻", cor: "#10B981" },
-  "F8x6Y7K9pcQApWrBrUmeOfCydl52":     { nome: "Rachel", emoji: "🦋", cor: "#EC4899" },
 };
 
 // ── Estado global ─────────────────────────────────────────
